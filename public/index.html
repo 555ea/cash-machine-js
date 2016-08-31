@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Cash Machine</title>
-    <link rel="stylesheet" href="/lib/bootstrap/dist/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/keyboard/dist/css/keyboard.min.css">
     <link rel="stylesheet" href="/css/main.css">
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/jquery-ui/jquery-ui.min.js"></script>
     <script src="/lib/angular/angular.min.js"></script>
     <script src="/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/lib/angular-credit-cards/release/angular-credit-cards.js"></script>
+    <script src="/lib/keyboard/dist/js/jquery.keyboard.js"></script>
+    <script src="/lib/ng-virtual-keyboard/dist/ng-virtual-keyboard.js"></script>
 </head>
 <body class="container-fluid" ng-app="app">
-<div ui-view>
+<h1>Cash Machine Demo</h1>
+<div ui-view class="col-md-10 col-md-offset-1">
 
 </div>
 <script src="/app/app.module.js"></script>
 <script src="/app/app.routing.js"></script>
+<script src="/app/components/home/homeController.js"></script>
+<script src="/app/components/menu/menuController.js"></script>
 </body>
 </html>

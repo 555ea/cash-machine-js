@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/555ea/cash-machine-js/issues"
   },
-  "homepage": "https://github.com/555ea/cash-machine-js#readme"
+  "homepage": "https://github.com/555ea/cash-machine-js#readme",
+  "dependencies": {
+    "express-session": "^1.14.1",
+    "passport-local": "^1.0.0"
+  }
 }

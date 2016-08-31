@@ -6,7 +6,7 @@ function init() {
     Card.find({})
         .then(function (cards) {
             if (cards && !cards.length) {
-                var card = new Card({number: 4111111111111111, pin: 123, balance: 100})
+                var card = new Card({number: 4111111111111111, pin: 1234, balance: 100})
                 return card.save()
             }
         })
