@@ -1,0 +1,17 @@
+{
+  "name": "cash-machine-js",
+  "description": "demo",
+  "main": "app.js",
+  "authors": [
+    "andrey"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/555ea/cash-machine-js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

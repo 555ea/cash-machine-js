@@ -1,0 +1,19 @@
+{
+  "name": "cash-machine-js",
+  "version": "1.0.0",
+  "description": "demo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/555ea/cash-machine-js.git"
+  },
+  "author": "andrey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/555ea/cash-machine-js/issues"
+  },
+  "homepage": "https://github.com/555ea/cash-machine-js#readme"
+}
