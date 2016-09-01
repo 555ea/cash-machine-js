@@ -1,4 +1,9 @@
-angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
+angular.module('app').config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    }).hashPrefix('!');
+
     $urlRouterProvider.otherwise("/");
     $stateProvider
         .state('home', {

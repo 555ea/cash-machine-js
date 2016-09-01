@@ -37,6 +37,10 @@ app.use(function(err, req, res, next) {
     res.status(code).json(message);
 });
 
+app.get('/*', function (req, res) {
+    res.sendFile(__dirname  + '/public/index.html');
+})
+
 app.listen(2222, function () {
     console.log('Example app listening on port 2222!');
 });

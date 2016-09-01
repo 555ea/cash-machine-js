@@ -3,6 +3,7 @@ angular.module('app').controller('cashController', cashController);
 function cashController($state, CardFactory) {
     var vm = this;
     vm.withdrawMoney = withdrawMoney;
+    vm.exit = exit;
 
     activate();
 
@@ -17,5 +18,9 @@ function cashController($state, CardFactory) {
         CardFactory.withdrawMoney(vm.amountOfMoney).then(function () {
             $state.go('menu');
         });
+    }
+
+    function exit() {
+        $state.go('menu');
     }
 }

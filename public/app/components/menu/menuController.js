@@ -3,6 +3,7 @@ angular.module('app').controller('menuController', menuController);
 function menuController($scope, $state, CardFactory) {
     var vm = this;
     vm.getCash = getCash;
+    vm.logout = logout;
 
     activate();
 
@@ -15,5 +16,9 @@ function menuController($scope, $state, CardFactory) {
 
     function getCash() {
         $state.go('cash');
+    }
+
+    function logout() {
+        $state.go('home');
     }
 }
