@@ -15,13 +15,15 @@
     <script src="/lib/ng-virtual-keyboard/dist/ng-virtual-keyboard.js"></script>
 </head>
 <body class="container-fluid" ng-app="app">
-<h1>Cash Machine Demo</h1>
-<div ui-view class="col-md-10 col-md-offset-1">
-
+<div class="col-md-10 col-md-offset-1">
+    <h1>Cash Machine Demo</h1>
+    <ui-view></ui-view>
 </div>
 <script src="/app/app.module.js"></script>
 <script src="/app/app.routing.js"></script>
 <script src="/app/components/home/homeController.js"></script>
 <script src="/app/components/menu/menuController.js"></script>
+<script src="/app/components/cash/cashController.js"></script>
+<script src="/app/shared/factories/CardFactory.js"></script>
 </body>
 </html>

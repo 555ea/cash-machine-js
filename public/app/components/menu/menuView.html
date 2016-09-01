@@ -1,3 +1,6 @@
 <div ng-controller="menuController as mc">
-    <p>menu</p>
+    <h2 ng-bind="mc.card.number"></h2>
+    <h3><b>$<span ng-bind="mc.card.balance"></span></b></h3>
+    <button ng-click="mc.getCash()">get cash</button>
+    <button>exit</button>
 </div>

@@ -1,6 +1,6 @@
 angular.module('app').controller('homeController', homeController);
 
-function homeController($scope, $http, $state) {
+function homeController($scope, $http, $state, CardFactory) {
     var vm = this;
     vm.card = {number: undefined, pin: undefined};
     //functions
@@ -11,8 +11,8 @@ function homeController($scope, $http, $state) {
         preventPaste: true,
         autoAccept: true,
         maxLength: 4,
-        display:{
-            bksp:'\u232b'
+        display: {
+            bksp: '\u232b'
         },
         customLayout: {
             'normal': [
@@ -30,13 +30,9 @@ function homeController($scope, $http, $state) {
 
     function login() {
         vm.loggingIn = true;
-        $http({method: 'POST', url: '/auth/login', data: vm.card})
-            .then(function (res) {
-                console.log(res);
+        CardFactory.login(vm.card)
+            .then(function () {
                 $state.go('menu');
-            })
-            .catch(function (err) {
-                console.error(err);
             })
             .finally(function () {
                 vm.loggingIn = false;

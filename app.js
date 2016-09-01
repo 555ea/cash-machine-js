@@ -30,7 +30,11 @@ app.use('/auth', auth);
 app.use(function(err, req, res, next) {
     console.error(err);
     var message = err.message||'Something broke!';
-    res.status(500).json(message);
+    var code = 500;
+    if(err.code){
+        code = err.code;
+    }
+    res.status(code).json(message);
 });
 
 app.listen(2222, function () {

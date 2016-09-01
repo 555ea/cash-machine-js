@@ -44,8 +44,18 @@ router.post('/login', function (req, res, next) {
                 next(info);
             }
             else {
-                console.log('Card authenticated');
-                res.json(req.user);
+                req.logIn(card, function (err) {
+                    if (err) {
+                        return next(err);
+                    }
+                    else {
+                        console.log('Card authenticated');
+                        card = card.toObject();
+                        card.pin = undefined;
+                        res.json(card);
+                    }
+                });
+
             }
         })(req, res, next);
 });
