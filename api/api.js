@@ -36,6 +36,9 @@ router.put('/card', function (req, res, next) {
                     }
                 });
             }
+            else{
+                next('Insufficient funds');
+            }
         })
     } else {
         next({code: 401})

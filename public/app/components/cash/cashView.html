@@ -1,7 +1,9 @@
 <div ng-controller="cashController as cc">
     <div class="form-group">
-        <input class="form-control" ng-model="cc.amountOfMoney" type="text">
+        <input class="form-control input-lg" natural-numbers ng-model="cc.amountOfMoney" ng-model-options="{updateOn: 'blur'}" type="text">
     </div>
-    <button class="btn btn-primary" ng-click="cc.withdrawMoney()">Withdraw</button>
-    <button class="btn btn-default" ng-click="cc.exit()">exit</button>
+    <p ng-show="cc.success" class="text-success">Success withdrawing $<span ng-bind="cc.success"></span>. Redirecting in <span ng-bind="cc.seconds">...</span></p>
+    <p ng-show="cc.error" class="text-danger">Failed withdrawing $<span ng-bind="cc.error"></span>. Insufficient funds.</p>
+    <button class="btn btn-primary" ng-click="cc.withdrawMoney()">Get Cash</button>
+    <button class="btn btn-default" ng-click="cc.exit()">Cancel</button>
 </div>

@@ -1,15 +1,33 @@
 <div ng-controller="homeController as hc">
-    <form name="ccForm" novalidate>
+    <form name="hc.ccForm" novalidate>
         <div class="form-group">
             <label for="card-number">Card Number</label>
-            <input type="text" autocomplete="off" class="form-control input-lg" id="card-number" placeholder="4111 1111 1111 1111" cc-number cc-eager-type cc-format
-                    name="ccNumber" ng-model="hc.card.number">
+            <input type="text" autocomplete="off" class="form-control input-lg" id="card-number"
+                   placeholder="4111 1111 1111 1111" cc-number cc-eager-type cc-format
+                   name="ccNumber" ng-model="hc.card.number" ng-required="true">
+            <span ng-show="hc.ccForm.ccNumber.$ccEagerType" ng-bind="hc.ccForm.ccNumber.$ccEagerType"></span>
+            <p class="text-danger" ng-show="hc.ccForm.$submitted &&  hc.ccForm.ccNumber.$error.required">
+                Credit card number required!
+            </p>
+            <p class="text-danger" ng-show="hc.ccForm.$submitted && hc.ccForm.ccNumber.$invalid && !hc.ccForm.ccNumber.$error.required">
+                Credit card number is not valid!
+            </p>
         </div>
         <div class="form-group">
             <label for="pin">Pin</label>
             <input type="text" autocomplete="off" class="form-control input-lg" id="pin" placeholder="1234"
-                   name="ccPin" ng-model="hc.card.pin" readonly="readonly" ng-virtual-keyboard="hc.keyboardConfig">
+                   name="ccPin" ng-model="hc.card.pin" readonly="readonly" ng-virtual-keyboard="hc.keyboardConfig"
+                   ng-required="true" ng-minlength="4">
+            <p class="text-danger" ng-show="hc.ccForm.$submitted && hc.ccForm.ccPin.$error.required">
+                Pin code required!
+            </p>
+            <p class="text-danger" ng-show="hc.ccForm.$submitted && hc.ccForm.ccPin.$error.minlength">
+                Pin code must contain 4 digits!
+            </p>
         </div>
+        <button type="submit" class="btn btn-primary" ng-click="hc.login()">Sumbit <img style="display: inline; height:20px"
+                                                                                    ng-show="hc.loggingIn"
+                                                                                    src="/img/gif/loader.gif"></button>
+        <p class="text-danger" ng-show="hc.loginError" ng-bind="hc.loginError"></p>
     </form>
-    <button class="btn btn-primary" ng-click="hc.login()" >ok <img style="display: inline;" ng-show="hc.loggingIn" src="/img/gif/loader.gif"></button>
 </div>

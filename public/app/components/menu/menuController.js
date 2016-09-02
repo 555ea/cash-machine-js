@@ -19,6 +19,7 @@ function menuController($scope, $state, CardFactory) {
     }
 
     function logout() {
+        //send logout request
         $state.go('home');
     }
 }

@@ -29,14 +29,19 @@ function homeController($scope, $http, $state, CardFactory) {
     }
 
     function login() {
-        vm.loggingIn = true;
-        CardFactory.login(vm.card)
-            .then(function () {
-                $state.go('menu');
-            })
-            .finally(function () {
-                vm.loggingIn = false;
-            })
+        if(vm.ccForm.$valid) {
+            vm.loggingIn = true;
+            CardFactory.login(vm.card)
+                .then(function () {
+                    $state.go('menu');
+                })
+                .catch(function (err) {
+                    vm.loginError = err;
+                })
+                .finally(function () {
+                    vm.loggingIn = false;
+                })
+        }
     }
 }
 

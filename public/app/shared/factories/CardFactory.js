@@ -19,6 +19,7 @@ angular
                 })
                 .catch(function (err) {
                     console.error(err);
+                    throw err.data;
                 })
         }
 
@@ -34,6 +35,7 @@ angular
                 })
                 .catch(function (err) {
                     console.error(err);
+                    throw err.data;
                 })
         }
     });
