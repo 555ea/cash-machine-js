@@ -7,12 +7,13 @@ angular
         var service = {
             login: login,
             getCard: getCard,
-            withdrawMoney:withdrawMoney,
+            withdrawMoney: withdrawMoney,
+            generateCard: generateCard,
         };
         return service;
 
         function withdrawMoney(amount) {
-            return $http({method: 'PUT', url: '/api/card', data: {amount:amount}})
+            return $http({method: 'PUT', url: '/api/card', data: {amount: amount}})
                 .then(function (res) {
                     console.log(res);
                     factory.card.balance -= parseFloat(amount);
@@ -32,6 +33,18 @@ angular
                 .then(function (res) {
                     console.log(res);
                     factory.card = res.data;
+                })
+                .catch(function (err) {
+                    console.error(err);
+                    throw err.data;
+                })
+        }
+
+        function generateCard() {
+            return $http({method: 'GET', url: '/api/card'})
+                .then(function (res) {
+                    console.log(res);
+                    return res.data;
                 })
                 .catch(function (err) {
                     console.error(err);

@@ -3,14 +3,17 @@ var Schema = mongoose.Schema;
 
 var Card = new Schema({
     number: {
-        type: Number,
+        type: String,
         index: {unique: true}
     },
-    pin:{
+    pin: {
+        type: String
+    },
+    balance: {
         type: Number
     },
-    balance:{
-        type: Number
+    isAdmin: {
+        type: Boolean
     }
 });
 

@@ -18,4 +18,8 @@ angular.module('app').config(function ($locationProvider, $stateProvider, $urlRo
             url: "/cash",
             templateUrl: "/app/components/cash/cashView.html",
         })
+        .state('admin', {
+            url: "/admin",
+            templateUrl: "/app/components/admin/adminView.html",
+        })
 })

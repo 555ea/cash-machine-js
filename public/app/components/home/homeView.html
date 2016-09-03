@@ -9,7 +9,8 @@
             <p class="text-danger" ng-show="hc.ccForm.$submitted &&  hc.ccForm.ccNumber.$error.required">
                 Credit card number required!
             </p>
-            <p class="text-danger" ng-show="hc.ccForm.$submitted && hc.ccForm.ccNumber.$invalid && !hc.ccForm.ccNumber.$error.required">
+            <p class="text-danger"
+               ng-show="hc.ccForm.$submitted && hc.ccForm.ccNumber.$invalid && !hc.ccForm.ccNumber.$error.required">
                 Credit card number is not valid!
             </p>
         </div>
@@ -25,9 +26,11 @@
                 Pin code must contain 4 digits!
             </p>
         </div>
-        <button type="submit" class="btn btn-primary" ng-click="hc.login()">Sumbit <img style="display: inline; height:20px"
-                                                                                    ng-show="hc.loggingIn"
-                                                                                    src="/img/gif/loader.gif"></button>
+        <button type="submit" class="btn btn-primary" ng-click="hc.login()">Sumbit <img
+                style="display: inline; height:20px"
+                ng-show="hc.loggingIn"
+                src="/img/gif/loader.gif"></button>
         <p class="text-danger" ng-show="hc.loginError" ng-bind="hc.loginError"></p>
     </form>
+    <a class="small admin" ui-sref="admin">admin</a>
 </div>

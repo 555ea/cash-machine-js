@@ -1,0 +1,20 @@
+<div ng-controller="adminController as admin">
+    <h3>Please, authorize!</h3>
+    <div ng-show="!admin.authorized">
+        <div class="form-group">
+            <input class="form-control input-lg" ng-model="admin.input" type="text">
+        </div>
+        <p ng-show="admin.error" class="text-danger" ng-bind="admin.error"></p>
+        <button class="btn btn-primary" ng-click="admin.login()">Login</button>
+    </div>
+    <div ng-show="admin.authorized">
+        <h3>Authorized :)</h3>
+        <div class="form-group">
+            <button class="btn btn-primary" ng-click="admin.generate()">Generate Card</button>
+        </div>
+        <pre>
+            <p ng-repeat="card in admin.cards">Card number:<kde ng-bind="card.number"></kde>, pin:<kde
+                    ng-bind="card.pin"></kde></p>
+        </pre>
+    </div>
+</div>
